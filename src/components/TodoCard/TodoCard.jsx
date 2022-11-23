@@ -46,7 +46,9 @@ export const TodoCard = ({ todoDetails }) => {
             checked={isCompleted}
             type="checkbox"
           />
-          <span className="todo-label">{todo}</span>
+          <span className={`todo-label ${isCompleted && "todo-completed"}`}>
+            {todo}
+          </span>
         </label>
       )}
       {isEditOn ? (

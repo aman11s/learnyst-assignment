@@ -11,3 +11,7 @@
   padding: 2px 5px;
   margin: 0 0.5rem;
 }
+
+.todo-completed {
+  text-decoration: line-through;
+}

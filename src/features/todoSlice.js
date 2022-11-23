@@ -22,12 +22,31 @@ const todoSlice = createSlice({
 
     toggleTodoHandler: (state, action) => {
       const { id, todoCheckToggle } = action.payload;
-      let foundTodoIndex = state.todos.findIndex((todo) => todo.id === id);
+      const foundTodoIndex = state.todos.findIndex((todo) => todo.id === id);
       state.todos[foundTodoIndex].isCompleted = todoCheckToggle;
+      updateLocalStorage(state.todos);
+    },
+
+    deleteTodoHandler: (state, action) => {
+      const { id } = action.payload;
+      const foundTodoIndex = state.todos.findIndex((todo) => todo.id === id);
+      state.todos.splice(foundTodoIndex, 1);
+      updateLocalStorage(state.todos);
+    },
+
+    editTodoHandler: (state, action) => {
+      const { id, updatedText } = action.payload;
+      const foundTodoIndex = state.todos.findIndex((todo) => todo.id === id);
+      state.todos[foundTodoIndex].todo = updatedText;
       updateLocalStorage(state.todos);
     },
   },
 });
 
 export default todoSlice.reducer;
-export const { addTodoHandler, toggleTodoHandler } = todoSlice.actions;
+export const {
+  addTodoHandler,
+  toggleTodoHandler,
+  deleteTodoHandler,
+  editTodoHandler,
+} = todoSlice.actions;

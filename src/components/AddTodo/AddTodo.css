@@ -1,0 +1,14 @@
+form input,
+button {
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+}
+
+form input {
+  font-size: 1rem;
+}
+
+form button {
+  margin: 0 1rem;
+  cursor: pointer;
+}

@@ -52,7 +52,12 @@ export const TodoCard = ({ todoDetails }) => {
         </label>
       )}
       {isEditOn ? (
-        <button onClick={updateHandler}>Update Text</button>
+        <>
+          <button onClick={updateHandler}>Update Text</button>
+          <button className="cancel-btn" onClick={() => setIsEditOn(false)}>
+            Cancel
+          </button>
+        </>
       ) : (
         <button onClick={editHandler}>Edit</button>
       )}

@@ -1,7 +1,10 @@
+import { useSelector } from "react-redux";
 import "./App.css";
-import { AddTodo } from "./components";
+import { AddTodo, TodoCard } from "./components";
 
 function App() {
+  const { todos } = useSelector((store) => store.todos);
+
   return (
     <div className="App">
       <h1 className="title">
@@ -11,6 +14,9 @@ function App() {
         </span>
       </h1>
       <AddTodo />
+      {todos.map((todoDetails) => {
+        return <TodoCard key={todoDetails.id} todoDetails={todoDetails} />;
+      })}
     </div>
   );
 }

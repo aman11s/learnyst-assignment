@@ -1,0 +1,13 @@
+.todo-card {
+  margin: 1rem 0;
+}
+
+.todo-label {
+  padding: 0 0.5rem;
+  font-size: 1.1rem;
+}
+
+.todo-card button {
+  padding: 2px 5px;
+  margin: 0 0.5rem;
+}

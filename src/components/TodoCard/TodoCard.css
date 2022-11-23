@@ -15,3 +15,8 @@
 .todo-completed {
   text-decoration: line-through;
 }
+
+.todo-card button,
+.todo-card input {
+  padding: 5px;
+}

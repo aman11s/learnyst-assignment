@@ -11,3 +11,16 @@ input {
   font-family: inherit;
   font-size: inherit;
 }
+
+.filter-todos {
+  margin: 1rem 0rem;
+}
+
+.filter-select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.todo-list {
+  margin: 3rem 0;
+}

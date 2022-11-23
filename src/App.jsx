@@ -29,18 +29,28 @@ function App() {
       </h1>
 
       <AddTodo />
-      <select onChange={filterSelectHandler} name="filter">
-        {filterOptions.map((option) => {
-          return (
-            <option value={option} key={option}>
-              {option}
-            </option>
-          );
+
+      <div className="filter-todos">
+        <span>Filter Todos : </span>
+        <select
+          className="filter-select"
+          onChange={filterSelectHandler}
+          name="filter"
+        >
+          {filterOptions.map((option) => {
+            return (
+              <option value={option} key={option}>
+                {option}
+              </option>
+            );
+          })}
+        </select>
+      </div>
+      <div className="todo-list">
+        {filteredTodos.map((todoDetails) => {
+          return <TodoCard key={todoDetails.id} todoDetails={todoDetails} />;
         })}
-      </select>
-      {filteredTodos.map((todoDetails) => {
-        return <TodoCard key={todoDetails.id} todoDetails={todoDetails} />;
-      })}
+      </div>
     </div>
   );
 }
